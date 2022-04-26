@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+    <h1>Upload</h1>
+    
+    <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+
+        <input type="file" th:name="image-file" accept="image/*">
+        <!-- <input type="file" th:name="img-file" accept="image/*"> -->
+        
+
+        <div class="row">
+            <div class="form-group col-lg-5">
+                <label for="exampleFormControlInput1" class="form-label">Poster Name</label>
+                <input type="text" class="form-control" th:name="name" width="100%" required>
+            </div>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px; width: 550px;" th:name="shortNote"></textarea>
+            <label for="floatingTextarea2">Comments</label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Upload!</button>
+
+    </form>
+</body>
+</html>
